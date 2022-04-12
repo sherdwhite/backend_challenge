@@ -26,6 +26,8 @@ class QuotesDetailViewSet(generics.RetrieveUpdateDestroyAPIView):
 class CreateQuoteViewSet(generics.CreateAPIView):
     queryset = Quote.objects.all()
     serializer_class = QuotesSerializer
+    authentication_classes = [BasicAuthentication, TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     # def perform_create(self, serializer):
     #     serializer.save(creator=self.request.user)
