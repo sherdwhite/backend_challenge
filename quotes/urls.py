@@ -1,7 +1,6 @@
-from django.urls import include, path, re_path
+from django.urls import path
 
 from quotes.views import AllQuotesViewSet, QuotesDetailViewSet, CreateQuoteViewSet
-from backend_challenge import views
 
 urlpatterns = [
     path('quotes/', AllQuotesViewSet.as_view({'get': 'list'})),
