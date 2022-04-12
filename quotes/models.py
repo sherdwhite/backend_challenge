@@ -10,7 +10,7 @@ class Quote(TimeStampedModel):
     effective_date = DateField()
     has_previous_cancelled_policy = BooleanField("Previous Cancelled Policy", default=False)
     is_property_owner = BooleanField("Property Owner", default=False)
-    property_owner = CharField(max_length=150)
+    name = CharField(max_length=150)
     property_address = CharField(max_length=150)
     property_state = CharField(max_length=50)
     zip_code = CharField(max_length=5)
