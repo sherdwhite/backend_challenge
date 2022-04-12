@@ -95,4 +95,3 @@ a good option, but you can use whatever you prefer).<br>
 your API.<br>
 ● You should include a README outlining how to use your API and how to run
 your test suite.<br>
-● When you are finished, please respond to this email with a zip file.<br>
