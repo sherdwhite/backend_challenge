@@ -3,7 +3,7 @@ from rest_framework.authentication import BasicAuthentication, TokenAuthenticati
 from rest_framework.permissions import IsAuthenticated
 
 from quotes.models import Quote
-from quotes.serializers import QuotesSerializer
+from quotes.serializers import GetQuotesSerializer, PostQuotesSerializer
 
 
 class AllQuotesViewSet(viewsets.ModelViewSet):
@@ -11,21 +11,21 @@ class AllQuotesViewSet(viewsets.ModelViewSet):
     API endpoint that allows all quotes to be viewed.
     """
     queryset = Quote.objects.all().order_by('-modified')
-    serializer_class = QuotesSerializer
+    serializer_class = GetQuotesSerializer
     authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
 
 class QuotesDetailViewSet(generics.RetrieveUpdateDestroyAPIView):
     queryset = Quote.objects.all()
-    serializer_class = QuotesSerializer
+    serializer_class = GetQuotesSerializer
     authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
 
 class CreateQuoteViewSet(generics.CreateAPIView):
     queryset = Quote.objects.all()
-    serializer_class = QuotesSerializer
+    serializer_class = PostQuotesSerializer
     authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
