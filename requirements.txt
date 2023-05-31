@@ -1,6 +1,6 @@
 django==4.0.10
 django-model-utils==4.2.0
 djangorestframework==3.13.1
-requests==2.27.1
+requests==2.31.0
 urllib3==1.26.8
 xmltodict==0.12.0
